@@ -1,0 +1,35 @@
+{
+  "name": "pblitz",
+  "version": "1.0.0",
+  "description": "1. Siddhartha Khuntia 2. Sibasish Mahanta",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidkhuntia/p-blitz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sidkhuntia/p-blitz/issues"
+  },
+  "homepage": "https://github.com/sidkhuntia/p-blitz#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-session": "^2.0.0",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "javascript-time-ago": "^2.3.13",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.3.2",
+    "nodemon": "^2.0.16",
+    "passport": "^0.5.2",
+    "passport-google-oauth20": "^2.0.0"
+  }
+}
