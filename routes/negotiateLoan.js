@@ -9,13 +9,18 @@ var googleUser = require("../server");
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-  port: 465, // true for 465, false for other ports
-  host: "smtp.gmail.com",
+  // port: 465, // true for 465, false for other ports
+  // host: "smtp.gmail.com",
+  
+  // service:'gmail',
+  host: "smtp.ethereal.email",
+  port: 587,
+  // secure: 465,
   auth: {
-    user: "p.blitz2022@gmail.com",
+    user: "kara.murray57@ethereal.email",
     pass: process.env.EMAIL_PASSWORD,
   },
-  secure: true,
+  // secure: true,
 });
 
 const TimeAgo = require("javascript-time-ago");
@@ -82,7 +87,7 @@ app.put("/:id", async (req, res) => {
     console.log(loan.creatorEmail)
 
     const mailData = {
-      from: "p.blitz2002@gmail.com", // sender address
+      from: "kara.murray57@ethereal.email", // sender address
       to:  loan.creatorEmail, // list of receivers
       subject: "You have an offer from " + negotiator.name, // Subject line
       html: '<b>Hey there! </b><br> You got an notification. <a href="p-blitz.herokuapp.com">Click Here</a><br/>'
