@@ -1,0 +1,34 @@
+<section class="section-50">
+    <div class="notification-container">
+        <h3 class="m-b-50 heading-line">Notifications   <i class="fa fa-bell"></i></h3>
+        <div class="notification-ui_dd-content">
+        <% negotiateLoans.forEach(loan => { %>
+            <% if(loan.creatorGoogleID===userGoogleID){ %>
+            <div class="notification-list">
+                <div class="notification-container">
+                    <div class="notification-list_content">
+                        <div class="notification-list_img">
+                            <img src=<%= loan.negotiatorPhoto %>  alt="user">
+                        </div>
+                        <div class="notification-list_detail">
+                            <p><b><%= loan.negotiator %> </b> <span class="text-muted">has an offer</span> </p>
+                            <p class="">Offered tenure: <%= loan.tenure %> yrs
+                                </br> Offered interest: <%= loan.interestRate %>%
+                            </p>
+                        </div>
+                        <!-- <p class="notification-time">10 mins ago</p> -->
+                    </div>
+                    <div class="btn-container d-flex justify-content-between">
+                        <!-- <button  class="button btn-a">ACCEPT</button> -->
+                        <%- include("./partials/dualDeleteForm",{url:`/loanrequest/${loan.loanID}`,url2:`/negotiate/${loan.id}`, buttonName: acceptButton}) %>
+                        <form action="/negotiate/<%= loan.id %>?_method=DELETE" method="POST">
+                            <button class="button btn-r" type="submit"><%= rejectButton %> </button>
+                        </form>
+                    </div>
+                </div>
+            </div> 
+            <% } %>
+        <% }) %>
+        </div>
+    </div>
+</section>

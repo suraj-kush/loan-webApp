@@ -1,0 +1,47 @@
+<div class="loan-two-column" id="">
+  <div class="loan-left">
+    <div class="negotiate-loan-info">
+      <b>Loan amount:</b>
+      ₹ <%= loan.amount %>
+    </div>
+    <div class="negotiate-loan-info">
+      <b>Credit scrore:</b>
+      <%= loan.creatorCibilScore %>
+    </div>
+  </div>
+  <div class="loan-right">
+    <input
+      id="loan-tenure"
+      type="text"
+      name="tenure"
+      value="<%= loan.tenure %>"
+      required
+      onkeypress="return isNumberKey(event)"
+    />
+    <label
+      for="loan-tenure"
+      alt="Tenure (in yrs)"
+      placeholder="Tenure (in yrs)"
+    ></label>
+    <input
+      id="loan-interest-rate"
+      type="text"
+      name="interestRate"
+      value="<%= loan.interestRate %>"
+      required
+      onkeypress="return isNumberKey(event)"
+    />
+    <label
+      for="loan-interest-rate"
+      alt="Interest Rate (% per yr)"
+      placeholder="Interest Rate (% per yr)"
+    ></label>
+  </div>
+</div>
+<style>
+  .negotiate-loan-info{
+    padding: 1rem 0.35rem;
+    /* border: 2px solid black; */
+    margin-bottom: 0.7rem;
+  }
+</style>
