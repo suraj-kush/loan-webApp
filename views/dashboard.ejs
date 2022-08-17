@@ -5,7 +5,7 @@
     </h3>
     <div class="dashboard-ui_dd-content">
       <% loans.forEach(loan =>{ %>
-      <% if(loan.creatorGoogleID!==userGoogleID){ %> 
+      <% if(loan.creatorGoogleID!==googleUser.user.id){ %> 
       <div class="dashboard-list">
         <div class="dashboard-container">
           <div class="dashboard-list_content">

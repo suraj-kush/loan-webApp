@@ -5,23 +5,7 @@ const Profile = require("../models/profile");
 const NegotiateLoan = require("../models/negotiateLoans");
 const user = require("../server.js");
 var googleUser = require("../server");
-
-const nodemailer = require("nodemailer");
-
-const transporter = nodemailer.createTransport({
-  // port: 465, // true for 465, false for other ports
-  // host: "smtp.gmail.com",
-  
-  // service:'gmail',
-  host: "smtp.ethereal.email",
-  port: 587,
-  // secure: 465,
-  auth: {
-    user: "kara.murray57@ethereal.email",
-    pass: process.env.EMAIL_PASSWORD,
-  },
-  // secure: true,
-});
+const transporter = require('../public/scripts/mailer')
 
 const TimeAgo = require("javascript-time-ago");
 const en = require("javascript-time-ago/locale/en");
